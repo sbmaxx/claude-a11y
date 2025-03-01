@@ -41,18 +41,6 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       setInputValue(value);
     }, [value]);
     
-    // Format date for display (if needed)
-    const formatDate = (dateString: string): string => {
-      if (!dateString) return '';
-      
-      try {
-        const date = new Date(dateString);
-        return date.toISOString().split('T')[0]; // YYYY-MM-DD format
-      } catch (e) {
-        return dateString;
-      }
-    };
-    
     // Handle input change
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const newValue = e.target.value;
